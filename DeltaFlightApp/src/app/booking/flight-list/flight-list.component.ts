@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SharedService } from 'src/app/shared/services/shared-service.service';
 import { FlightSearch } from 'src/app/core/models/flight-search.model';
 import { FlightDataService } from 'src/app/shared/services/flight-data.service';
+import { IFlight } from 'src/app/core/models/flight.model';
 
 @Component({
   selector: 'app-flight-list',
@@ -16,8 +17,8 @@ export class FlightListComponent implements OnInit {
   displayedColumns: string[] = ['flightNumber', 'origin', 'destination', 'departure', 'arrival', 'selected'];
   displayFlightResults: boolean = false;
   displayReturningFlights: boolean = false;
-  departingFlights: IFlightDetail[];
-  returningFlights: IFlightDetail[];
+  departingFlights: IFlight[];
+  returningFlights: IFlight[];
 
   constructor(private service: FlightDataService, private sharedService: SharedService) { }
 

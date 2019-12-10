@@ -1,20 +1,7 @@
-export interface IFlightDetail {
+import { IFlight } from './flight.model';
 
-    id: string;
-    flightIdentifier: string;
-    flightNumber: string;
-    scheduledOriginGate: string;
-    scheduledDestinationGate: string;
-    departure: Date;
-    arrival: Date;
-    dateCreated: string;
-    dateUpdated: string;
-    destination: string;
-    origin: string;
-    destinationName: string;
-    originName: string;
-    selected: boolean;
-    departingFlights: IFlightDetail[];
-    returningFlights: IFlightDetail[];
+export interface IFlightDetail {
+    departingFlights: IFlight[];
+    returningFlights: IFlight[];
 }
 
