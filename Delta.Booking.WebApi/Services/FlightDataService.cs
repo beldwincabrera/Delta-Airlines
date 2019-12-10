@@ -42,6 +42,7 @@ namespace Delta.Booking.WebApi.Services
                 // Instance created  by the first thread.
             }
         }
+
         public List<FlightModel> LoadFlightData()
         {
             string serializedJsonData = System.IO.File.ReadAllText(@"data/airport_data.json");

@@ -8,6 +8,6 @@ namespace Delta.Booking.WebApi.Services
     {
         ICollection<AirportModel> GetAirports(string airportCodeOrCityName);
 
-        FlightModel GetFlights(FlightSearchModel flightSearch);
+        FlightListModel GetFlights(FlightSearchModel flightSearch);
     }
 }

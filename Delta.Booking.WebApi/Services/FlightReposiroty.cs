@@ -27,9 +27,9 @@ namespace Delta.Booking.WebApi.Services
             return airports;
         }
 
-        public FlightModel GetFlights(FlightSearchModel flightSearch)
+        public FlightListModel GetFlights(FlightSearchModel flightSearch)
         {
-            var flightsResult = new FlightModel();
+            var flightsResult = new FlightListModel();
 
             if (!DateTime.TryParse(flightSearch.DepartureDate, out DateTime departureDate))
             {

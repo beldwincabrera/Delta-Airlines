@@ -1,6 +1,5 @@
-
+﻿
 using System;
-using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -50,8 +49,5 @@ namespace Delta.Booking.WebApi
 
         [JsonProperty("origin_full_name")]
         public string OriginName { get; set; }
-
-        public ICollection<FlightModel> DepartingFlights { get; set; } = new List<FlightModel>();
-        public ICollection<FlightModel> ReturningFlights { get; set; } = new List<FlightModel>();
     }
 }
