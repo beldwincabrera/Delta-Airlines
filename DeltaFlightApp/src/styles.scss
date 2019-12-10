@@ -1,0 +1,19 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.mat-fom-style {
+    font: 20px Calibri;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-form-field
+{
+  width: 100%;
+}

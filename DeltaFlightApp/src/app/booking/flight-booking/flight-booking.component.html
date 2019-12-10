@@ -1,0 +1,102 @@
+<mat-card>
+    <mat-card-title>Book Your Flight</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit($event)">
+
+            <div class="row">
+                <div class="col">
+                    <mat-radio-group aria-label="Trip Type" color="primary" (change)="onTripTypeChange($event)"
+                        formControlName="tripType">
+                        <mat-radio-button value="RT">Roundtrip</mat-radio-button>
+                        <mat-radio-button value="OW">One Way</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="mat-fom-style">
+                        <input type="text" placeholder="From (Airport Code or City Name)" matInput
+                            formControlName="origin" [matAutocomplete]="auorigin"
+                            [ngClass]="{ 'is-invalid': submitted && f.origin.errors }">
+                        <mat-autocomplete #auorigin="matAutocomplete">
+                            <mat-option *ngFor="let originAirport of originAirportList"
+                                [value]="originAirport.airportCode">
+                                {{ originAirport.displayName }}
+                            </mat-option>
+                        </mat-autocomplete>
+                        <div *ngIf="submitted && f.origin.errors" class="invalid-feedback">
+                            <div *ngIf="f.origin.errors.required">Please enter a Departure Airport Code of City Name
+                            </div>
+                            <div *ngIf="f.origin.errors.minlength">Please enter a valid Airport Code of City Name</div>
+                        </div>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="mat-fom-style">
+                        <input type="text" placeholder="To (Airport Code or City Name)" matInput
+                            formControlName="destination" [matAutocomplete]="audestination"
+                            [ngClass]="{ 'is-invalid': submitted && f.destination.errors }">
+                        <mat-autocomplete #audestination="matAutocomplete">
+                            <mat-option *ngFor="let destinationAirport of destinationAirportList"
+                                [value]="destinationAirport.airportCode">
+                                {{ destinationAirport.displayName }}
+                            </mat-option>
+                        </mat-autocomplete>
+                        <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
+                            <div *ngIf="f.destination.errors.required">Please enter a Destination Airport Code of City
+                                Name</div>
+                            <div *ngIf="f.destination.errors.minlength">Please enter a valid Airport Code of City Name
+                            </div>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field color="primary" class="mat-fom-style">
+                        <input matInput [matDatepicker]="departureDate" (dateInput)="onDepartureDate($event)"
+                            (dateChange)="onDepartureDate($event)" formControlName="departureDate"
+                            placeholder="Departure date"
+                            [ngClass]="{ 'is-invalid': submitted && f.departureDate.errors }">
+                        <mat-datepicker-toggle matSuffix [for]="departureDate"></mat-datepicker-toggle>
+                        <mat-datepicker #departureDate></mat-datepicker>
+                        <div *ngIf="submitted && f.departureDate.errors" class="invalid-feedback">
+                            <div *ngIf="f.departureDate.errors.required">Please enter a Departure Date</div>
+                        </div>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field color="primary" class="mat-fom-style" [hidden]="returnDateHidden">
+                        <input matInput [matDatepicker]="returnDate" (dateInput)="onReturnDate($event)"
+                            (dateChange)="onReturnDate($event)" formControlName="returnDate" placeholder="Return date"
+                            [ngClass]="{ 'is-invalid': submitted && f.returnDate.errors }">
+                        <mat-datepicker-toggle matSuffix [for]="returnDate"></mat-datepicker-toggle>
+                        <mat-datepicker #returnDate></mat-datepicker>
+                        <div *ngIf="submitted && f.returnDate.errors" class="invalid-feedback">
+                            <div *ngIf="f.returnDate.errors.required">Please enter a Return Date</div>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="mat-fom-style" style="width:300px;">
+                        <input matInput type="number" min="1" max="5" step="1" placeholder="Passengers"
+                            formControlName="totalPassengers">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button mat-flat-button color="primary">Search</button>
+                    <button mat-flat-button color="warm" type="reset" (click)="reset()">Reset</button>
+                </div>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>
