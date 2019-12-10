@@ -1,73 +1,89 @@
-Application Overview and architecture
+Assignment
+----------
+Create a web application that allows a user to search for flights and display the results in a tabular view.
 
-  - Overall Goals
-    - Support Searching for Airports based on (Airport code or City Name)
-    - Support Viewing a list of Flights based on input from the user
+Features
+--------
+-Allow the user to enter a station (destination or origin) to search flights. Display the results in a table.
+-Provide an auto-suggest feature for station.
+-Provide two RESTful endpoints supporting the functionality listed in steps 1 and 2.
+
+Datasource
+----------
+-A zipped CSV file of flights is available in /data/flights.csv. Each row in the CSV file represents a flight.
+
+
+--------------------------------------
+Application Overview and architecture
+--------------------------------------
+  - Overall Goals
+    - Support Searching for Airports based on (Airport code or City Name)
+    - Support Viewing a list of Flights based on input from the user
 
 Key Requirements
- - Display flights with card/grid option
- - Display Airports within an Autocomplete control
- - Display Airports based on 3 digits Airport code or City Name
- - Display a list of Departing Flights based on Origin and Departing Date specified
- - Display a list of Arriving Flights based on Destination and Arrival Date specified
+ - Display flights with card/grid option
+ - Display Airports within an Autocomplete control
+ - Display Airports based on 3 digits Airport Code or City Name
+ - Display a list of Departing Flights based on Origin and Departing Date specified
+ - Display a list of Arriving Flights based on Destination and Arrival Date specified
 
 -Application Features
 - Flight Search Component
-  - Autocomplete control to display list of Airports
+  - Autocomplete control to display a list of Airports
 - Flight Listing Component
-  - Card/Grid to display list of Flights
+  - Card/Grid to display a list of Flights
 
 Domain Security
- - N/A
+ - N/A
 
 Domain Rules
- - Airport Search must have at a minimun 3 digits to initiate server look-up
- - Airports should be shown matching Airport Code or City Name based on input criteria from user
- - Origin/Destination should be validated as they are required fields
- - Departure/Arrival Date should be validated as they are required
+ - Airport Search must have at a minimum 3 digits to initiate server look-up
+ - Airports should be shown matching Airport Code or City Name based on input criteria from the user
+ - Origin/Destination should be validated as they are required fields
+ - Departure/Arrival Date should be validated as they are required
 
 Logging
- - N/A
+ - N/A
 
 Services/Communication
- - RESTful Service will be used (.NET Core/ ASPNET WebApi)
- - Angular Services (Flight Data Service)
-   - Data Services : Use HttpClient
-     - Airports
-     - Flights 
+ - RESTful Service will be used (.NET Core/ ASPNET WebApi)
+ - Angular Services (Flight Data Service)
+   - Data Services: Use HttpClient
+     - Airports
+     - Flights 
 
 Data Models
- - Application models/interfaces
-   - Flight Search model/interface
-   - Flight Detail model/interface
+ - Application models/interfaces
+   - Flight Search model/interface
+   - Flight Detail model/interface
 
 Feature Components
- - Flight-Booking (Search)
-   - Gather input from user 
-   - Origin/Destination 
-   - Departure/Arrival Date 
-   - Trip-Type
-   - Total Passengers
+ - Flight-Booking (Search)
+   - Gather input from user 
+   - Origin/Destination 
+   - Departure/Arrival Date 
+   - Trip-Type
+   - Total Passengers
 
 Shared Functionality
- - Shared Serice to communicate from a Child to Child
- - Grid/Card (Angular Material Suite)
+ - Shared Serice to communicate from a Child to Child
+ - Grid/Card (Angular Material Suite)
 
 Angular Style Guide
- - Coding Conventions
- - Naming Rules
- - Application Structure
- - Organization Modules
- - Creating and Using Components
- - Creating and Using Services
- - Lifecycle Hooks
+ - Coding Conventions
+ - Naming Rules
+ - Application Structure
+ - Organization Modules
+ - Creating and Using Components
+ - Creating and Using Services
+ - Lifecycle Hooks
 
 Other Considerations
- - Accessibility
- - i18n (internationalization)
- - Environments
- - CI/CD
- - CDN, container (Docker), server, 
- - Unit testing (NUnit .NET Side)
- - End-to-end testing (client side)
- - APIs
+ - Accessibility
+ - i18n (internationalization)
+ - Environments
+ - CI/CD
+ - CDN, container (Docker), server, 
+ - Unit testing (NUnit .NET Side)
+ - End-to-end testing (client side)
+ - APIs

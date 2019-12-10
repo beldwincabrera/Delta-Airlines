@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delta.Booking.WebApi", "Delta.Booking.WebApi\Delta.Booking.WebApi.csproj", "{394C6DA4-D032-405D-BDFB-EE5D77FEC768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.Booking.Tests", "Delta.Booking.Tests\Delta.Booking.Tests.csproj", "{9710BC82-19A3-4CD5-946C-E94F919BAFB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delta.Booking.Tests", "Delta.Booking.Tests\Delta.Booking.Tests.csproj", "{9710BC82-19A3-4CD5-946C-E94F919BAFB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
