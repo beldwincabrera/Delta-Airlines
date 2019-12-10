@@ -1,0 +1,73 @@
+Application Overview and architecture
+
+  - Overall Goals
+    - Support Searching for Airports based on (Airport code or City Name)
+    - Support Viewing a list of Flights based on input from the user
+
+Key Requirements
+ - Display flights with card/grid option
+ - Display Airports within an Autocomplete control
+ - Display Airports based on 3 digits Airport code or City Name
+ - Display a list of Departing Flights based on Origin and Departing Date specified
+ - Display a list of Arriving Flights based on Destination and Arrival Date specified
+
+-Application Features
+- Flight Search Component
+  - Autocomplete control to display list of Airports
+- Flight Listing Component
+  - Card/Grid to display list of Flights
+
+Domain Security
+ - N/A
+
+Domain Rules
+ - Airport Search must have at a minimun 3 digits to initiate server look-up
+ - Airports should be shown matching Airport Code or City Name based on input criteria from user
+ - Origin/Destination should be validated as they are required fields
+ - Departure/Arrival Date should be validated as they are required
+
+Logging
+ - N/A
+
+Services/Communication
+ - RESTful Service will be used (.NET Core/ ASPNET WebApi)
+ - Angular Services (Flight Data Service)
+   - Data Services : Use HttpClient
+     - Airports
+     - Flights 
+
+Data Models
+ - Application models/interfaces
+   - Flight Search model/interface
+   - Flight Detail model/interface
+
+Feature Components
+ - Flight-Booking (Search)
+   - Gather input from user 
+   - Origin/Destination 
+   - Departure/Arrival Date 
+   - Trip-Type
+   - Total Passengers
+
+Shared Functionality
+ - Shared Serice to communicate from a Child to Child
+ - Grid/Card (Angular Material Suite)
+
+Angular Style Guide
+ - Coding Conventions
+ - Naming Rules
+ - Application Structure
+ - Organization Modules
+ - Creating and Using Components
+ - Creating and Using Services
+ - Lifecycle Hooks
+
+Other Considerations
+ - Accessibility
+ - i18n (internationalization)
+ - Environments
+ - CI/CD
+ - CDN, container (Docker), server, 
+ - Unit testing (NUnit .NET Side)
+ - End-to-end testing (client side)
+ - APIs
